@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Our Menu | Delicious Eats</title>
-    <meta name="description" content="Browse our full menu and order your favorite dishes online">
+    <title>Logout | Delicious Eats</title>
+    <meta name="description" content="Logout from your Delicious Eats account">
     
     <!-- Favicon -->
     <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
@@ -44,13 +44,13 @@
                     <ul>
                         <li><a class="hvr-underline-from-center" href="index.html">Home</a></li>
                         <li><a class="hvr-underline-from-center" href="categories.html">Categories</a></li>
-                        <li><a class="hvr-underline-from-center active" href="foods.html">Menu</a></li>
+                        <li><a class="hvr-underline-from-center" href="foods.html">Menu</a></li>
                         <li><a class="hvr-underline-from-center" href="order.html">Order</a></li>
                         <li><a class="hvr-underline-from-center" href="contact.html">Contact</a></li>
                         <li><a class="hvr-underline-from-center" href="team.html">Team</a></li>
                         <li><a class="hvr-underline-from-center" href="chatbot.html">Chat Bot</a></li>
                         <li><a class="hvr-underline-from-center" href="account.html">My Account</a></li>
-                        <li><a class="hvr-underline-from-center" href="login.html">Login</a></li>
+                        <li><a class="hvr-underline-from-center" href="login.html">logout</a></li>
                         <li>
                             <a id="shopping-cart" class="cart-icon">
                                 <i class="fas fa-shopping-cart"></i>
@@ -78,133 +78,26 @@
                                 </div>
                             </div>
                         </li>
+                        
                     </ul>
                 </div>
             </div>
         </nav>
     </header>
 
-    <!-- Food Search Section -->
-    <section class="hero">
+    <!-- Logout Confirmation Section -->
+    <section class="logout-section">
         <div class="container">
-            <h1>Our Delicious Menu</h1>
-            <p class="text-white">Browse our selection of mouth-watering dishes</p>
-            
-            <form class="search-form" id="search-form">
-                <input type="search" class="search-input" id="search-input" placeholder="Search for food..." required>
-                <button type="submit" class="btn btn-primary search-btn">Search</button>
-            </form>
-        </div>
-    </section>
-
-    <!-- Food Menu Section -->
-    <section class="food-menu">
-        <div class="container">
-            <div class="heading">
-                <h2>All Menu Items</h2>
-                <p>Choose from our wide variety of delicious options</p>
-            </div>
-            
-            <div class="grid grid-3">
-                <!-- Food Item 1 -->
-                <div class="food-card">
-                    <div class="food-img-container">
-                        <img src="img/food/f1.jpg" alt="បាយស្រូប" class="food-img">
-                    </div>
-                    <div class="food-body">
-                        <h3 class="food-title">បាយស្រូប</h3>
-                        <p class="food-price">$1.25</p>
-                        <p class="food-desc">បាយសាច់ជ្រូកពងទាចៀន</p>
-                        <form class="food-form">
-                            <input type="number" class="food-qty" value="1" min="1">
-                            <button type="submit" class="btn btn-primary btn-sm">Add to Cart</button>
-                        </form>
-                    </div>
+            <div class="logout-content">
+                <div class="logout-icon">
+                    <i class="fas fa-sign-out-alt fa-4x"></i>
                 </div>
-                
-                <!-- Food Item 2 -->
-                <div class="food-card">
-                    <div class="food-img-container">
-                        <img src="img/food/f2.jpg" alt="បាយម្រះព្រូវ" class="food-img">
-                    </div>
-                    <div class="food-body">
-                        <h3 class="food-title">បាយម្រះព្រូវ</h3>
-                        <p class="food-price">$1.50</p>
-                        <p class="food-desc">បាយឆារម្រះព្រូវ with ពងទាចៀន</p>
-                        <form class="food-form">
-                            <input type="number" class="food-qty" value="1" min="1">
-                            <button type="submit" class="btn btn-primary btn-sm">Add to Cart</button>
-                        </form>
-                    </div>
+                <h2>Are you sure you want to logout?</h2>
+                <p>You'll need to login again to access your account features.</p>
+                <div class="logout-actions">
+                    <button id="confirm-logout" class="btn btn-primary">Yes, Logout</button>
+                    <a href="index.html" class="btn btn-outline">Cancel</a>
                 </div>
-                
-                <!-- Food Item 3 -->
-                <div class="food-card">
-                    <div class="food-img-container">
-                        <img src="img/food/s1.jpg" alt="ហ្វឺ" class="food-img">
-                    </div>
-                    <div class="food-body">
-                        <h3 class="food-title">ហ្វឺ</h3>
-                        <p class="food-price">$2.50</p>
-                        <p class="food-desc">ហ្វឺប្រហិតសាច់គោ</p>
-                        <form class="food-form">
-                            <input type="number" class="food-qty" value="1" min="1">
-                            <button type="submit" class="btn btn-primary btn-sm">Add to Cart</button>
-                        </form>
-                    </div>
-                </div>
-                
-                <!-- Food Item 4 -->
-                <div class="food-card">
-                    <div class="food-img-container">
-                        <img src="img/food/s2.jpg" alt="គុយទាវ" class="food-img">
-                    </div>
-                    <div class="food-body">
-                        <h3 class="food-title">គុយទាវ</h3>
-                        <p class="food-price">$2.50</p>
-                        <p class="food-desc">គុយទាវប្រហិតសាច់គោ</p>
-                        <form class="food-form">
-                            <input type="number" class="food-qty" value="1" min="1">
-                            <button type="submit" class="btn btn-primary btn-sm">Add to Cart</button>
-                        </form>
-                    </div>
-                </div>
-                
-                <!-- Food Item 5 -->
-                <div class="food-card">
-                    <div class="food-img-container">
-                        <img src="img/food/d1.jpg" alt="កាហ្វេ" class="food-img">
-                    </div>
-                    <div class="food-body">
-                        <h3 class="food-title">កាហ្វេ</h3>
-                        <p class="food-price">$1.00</p>
-                        <p class="food-desc">កាហ្វេទឹកដោះគោទឹកកក(សាកថ្មបាន)</p>
-                        <form class="food-form">
-                            <input type="number" class="food-qty" value="1" min="1">
-                            <button type="submit" class="btn btn-primary btn-sm">Add to Cart</button>
-                        </form>
-                    </div>
-                </div>
-                
-                <!-- Food Item 6 -->
-                <div class="food-card">
-                    <div class="food-img-container">
-                        <img src="img/food/d2.jpg" alt="Milk Tea" class="food-img">
-                    </div>
-                    <div class="food-body">
-                        <h3 class="food-title">Milk Tea</h3>
-                        <p class="food-price">$2.00</p>
-                        <p class="food-desc">តែចិន Olong Tea with sweat steam milk and Boba</p>
-                        <form class="food-form">
-                            <input type="number" class="food-qty" value="1" min="1">
-                            <button type="submit" class="btn btn-primary btn-sm">Add to Cart</button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="text-center mt-40">
-                <a href="#" class="btn btn-outline">Load More</a>
             </div>
         </div>
     </section>
@@ -257,9 +150,8 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="js/cart.js"></script> <!-- Add this first -->
     <script src="js/addToCart.js"></script>
-    <script src="js/foods.js"></script>
     <script src="js/nav.js"></script>
-    <script src="js/sendDataToBackend.js"></script>
+    <script src="js/logout.js"></script>
     
     <script>
         // Mobile Menu Toggle

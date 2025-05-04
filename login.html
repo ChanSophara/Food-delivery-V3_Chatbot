@@ -4,135 +4,155 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Online Food Delivery Website</title>
+    <title>Login | Delicious Eats</title>
+    <meta name="description" content="Login to your Delicious Eats account to track your orders">
+    
     <!-- Favicon -->
     <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
-    <!-- Fontawesome CSS -->
-    <link rel="stylesheet" href="css/font-awesome/css/font-awesome.css">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
     <!-- Hover CSS -->
     <link rel="stylesheet" href="css/hover-min.css">
+    
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <!-- Navigation Section Start -->
+    <!-- Navigation -->
     <header class="navbar">
         <nav id="site-top-nav" class="navbar-menu navbar-fixed-top">
-            <div class="container">
-                <!-- logo -->
+            <div class="container nav-container">
+                <!-- Logo -->
                 <div class="logo">
-                    <a href="index.html" title="Logo">
-                        <img src="img/logo.png" alt="Logo" class="img-responsive">
+                    <a href="index.html" title="Delicious Eats">
+                        <img src="img/logo.jpg" alt="Delicious Eats Logo" class="img-responsive">
                     </a>
                 </div>
+                
+                <!-- Mobile Menu Toggle -->
+                <button class="menu-toggle" id="menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+                
                 <!-- Main Menu -->
-                <div class="menu text-right">
+                <div class="menu" id="main-menu">
                     <ul>
-                        <li><a class="hvr-underline-from-center" href="index.html">Home</a></li>
-                        <li><a class="hvr-underline-from-center" href="categories.html">Categories</a></li>
-                        <li><a class="hvr-underline-from-center" href="foods.html">Foods</a></li>
-                        <li><a class="hvr-underline-from-center" href="order.html">Order</a></li>
-                        <li><a class="hvr-underline-from-center" href="contact.html">Contact</a></li>
-                        <li><a class="hvr-underline-from-center" href="login.html">Login</a></li>
-                        <li>
-                            <a id="shopping-cart" class="shopping-cart">
-                                <i class="fa fa-cart-arrow-down"></i>
-                                <span class="badge">0</span>
-                            </a>
-                            <div id="cart-content" class="cart-content">
-                                <h3 class="text-center">Shopping Cart</h3>
-                                <table class="cart-table" border="0">
-                                    <tr>
-                                        <th>Food</th>
-                                        <th>Name</th>
-                                        <th>Price</th>
-                                        <th>Qty</th>
-                                        <th>Total</th>
-                                        <th>Action</th>
-                                    </tr>
-                                    <!-- Cart items will be dynamically added here -->
-                                </table>
-                                <a href="order.html" class="btn-primary">Confirm Order</a>
-                            </div>
-                        </li>
+                        <li><a class="hvr-underline-from-center" href="about.html">About Shop</a></li>
+                        <li><a class="hvr-underline-from-center" href="register.html">Register</a></li>
+                        <li><a class="hvr-underline-from-center active" href="login.html">Login</a></li>
+                        
                     </ul>
                 </div>
             </div>
         </nav>
     </header>
-    <!-- Navigation Section End -->
 
-    <!-- Login Section Start -->
-    <section class="login">
+    <!-- Login Section -->
+    <section class="login-section">
         <div class="container">
-            <h2 class="text-center">Login</h2>
-            <div class="heading-border"></div>
-
-            <form id="login-form" class="form">
-                <fieldset>
-                    <legend>Login</legend>
-                    <p class="label">Email</p>
-                    <input type="email" id="login-email" placeholder="Enter your email..." required>
-                    <p class="label">Password</p>
-                    <input type="password" id="login-password" placeholder="Enter your password..." required>
-                    <input type="submit" value="Login" class="btn-primary">
-                </fieldset>
-            </form>
-        </div>
-    </section>
-    <!-- Login Section End -->
-
-    <!-- Footer Section Start -->
-    <section class="footer">
-        <div class="container">
-            <div class="grid-3">
-                <div class="text-center">
-                    <h3>About Us</h3><br>
-                    <p>This is a frontend project about Food ordering system in which we are working with to improve customer service and improve sell of the resterant And to promote Khmer/Asian cuisine((✿◡‿◡))</p>
+            <div class="grid grid-2">
+                <div class="login-image">
+                    <img src="img/category/drink.jpg" alt="Delicious Food" class="img-responsive rounded shadow">
                 </div>
-                <div class="texr-center">
-                    <h3>Site Map</h3><br>
-                    <div class="site-links">
-                        <a href="categories.html">Categories</a>
-                        <a href="foods.html">Foods</a>
-                        <a href="order.html">Order</a>
-                        <a href="contact.html">Contact</a>
-                        <a href="login.html">Login</a>
+                
+                <div class="login-form-container">
+                    <div class="heading">
+                        <h2>Welcome Back!</h2>
+                        <p>Login to your account to track your orders and more</p>
                     </div>
-                </div>
-                <div class="social-links">
-                    <h3>Social Links</h3><br>
-                    <div class="social">
-                        <ul>
-                            <li><a href="#"><img src="https://img.icons8.com/color/48/null/facebook-new.png"/></a></li>
-                            <li><a href="#"><img src="https://img.icons8.com/fluency/48/null/instagram-new.png"/></a></li>
-                            <li><a href="#"><img src="https://img.icons8.com/color/48/null/twitter--v1.png"/></a></li>
-                            <li><a href="#"><img src="https://img.icons8.com/color/48/null/linkedin-circled--v1.png"/></a></li>
-                            <li><a href="#"><img src="https://img.icons8.com/color/48/null/youtube-play.png"/></a></li>
-                        </ul>
+                    
+                    <div id="login-confirmation" class="order-confirmation" style="display: none;">
+                        <i class="fas fa-check-circle fa-2x mb-20"></i>
+                        <h3>Login Successful!</h3>
+                        <p>You're being redirected to your account dashboard.</p>
                     </div>
+                    
+                    <!-- Replace the existing form in login.html with this -->
+                    <form id="login-form" class="form">
+                        <fieldset>
+                            <h2>Login to Your Account</h2>
+                            <div class="form-group">
+                                <label for="login-email" class="label">Email Address</label>
+                                <input type="email" id="login-email" class="form-control" placeholder="Enter your email" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="login-password" class="label">Password</label>
+                                <input type="password" id="login-password" class="form-control" placeholder="Enter your password" required>
+                                <small class="text-right">
+                                    <a href="#">Forgot password?</a>
+                                </small>
+                            </div>
+                            
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-primary btn-lg btn-block">Login</button>
+                            </div>
+                            
+                            <div class="text-center">
+                                <p>Don't have an account? <a href="register.html">Sign up here</a></p>
+                            </div>
+                        </fieldset>
+                    </form>
                 </div>
             </div>
         </div>
     </section>
-    <!-- Footer Section End -->
 
-    <!-- Copyright Section start -->
+    
+
+    <!-- Copyright -->
     <section class="copyright">
-        <div class="container text-center">
-            <p>All rights reserved. Design By <a href="#">Group 3 - I4AMS</a></p>
+        <div class="container">
+            <p>&copy; 2023 Delicious Eats. All rights reserved. Designed by <a href="#">Group 3 - I4AMS</a></p>
         </div>
-        <a id="back-to-top" class="btn-primary">
-            <i class="fa fa-angle-double-up"></i>
-        </a>
     </section>
-    <!-- Copyright Section End -->
 
-    <!-- JQuery -->
-    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
-    <!-- Jquery UI -->
-    <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
-    <!-- Custom JS -->
-    <script src="js/custom.js"></script>
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top" id="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <!-- JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="js/cart.js"></script> <!-- Add this first -->
+    <script src="js/addToCart.js"></script>
+    <script src="js/login.js"></script>
+    <script src="js/nav.js"></script>
+    <script src="js/sendDataToBackend.js"></script>
+    
+    <script>
+        // Mobile Menu Toggle
+        document.getElementById('menu-toggle').addEventListener('click', function() {
+            document.getElementById('main-menu').classList.toggle('active');
+        });
+
+        // Shopping Cart Toggle
+        document.getElementById('shopping-cart').addEventListener('click', function(e) {
+            e.preventDefault();
+            document.getElementById('cart-content').classList.toggle('show');
+        });
+
+        // Back to Top Button
+        window.addEventListener('scroll', function() {
+            var backToTop = document.getElementById('back-to-top');
+            if (window.pageYOffset > 300) {
+                backToTop.classList.add('show');
+            } else {
+                backToTop.classList.remove('show');
+            }
+        });
+
+        document.getElementById('back-to-top').addEventListener('click', function(e) {
+            e.preventDefault();
+            window.scrollTo({top: 0, behavior: 'smooth'});
+        });
+
+        
+    </script>
 </body>
 </html>

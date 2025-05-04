@@ -4,55 +4,78 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Online Food Delivery Website</title>
+    <title>Delicious Eats - Online Food Delivery</title>
+    <meta name="description" content="Order delicious food online from the best restaurants in town. Fast delivery and great prices!">
+    
     <!-- Favicon -->
     <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
-    <!-- Fontawesome CSS -->
-    <link rel="stylesheet" href="css/font-awesome/css/font-awesome.css">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
     <!-- Hover CSS -->
     <link rel="stylesheet" href="css/hover-min.css">
+    
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <!-- Navigation Section Start -->
+    <!-- Navigation -->
     <header class="navbar">
         <nav id="site-top-nav" class="navbar-menu navbar-fixed-top">
-            <div class="container">
-                <!-- logo -->
+            <div class="container nav-container">
+                <!-- Logo -->
                 <div class="logo">
-                    <a href="index.html" title="Logo">
-                        <img src="img/logo.png" alt="Logo" class="img-responsive">
+                    <a href="index.html" title="Delicious Eats">
+                        <img src="img/logo.jpg" alt="Delicious Eats Logo" class="img-responsive">
                     </a>
                 </div>
+                
+                <!-- Mobile Menu Toggle -->
+                <button class="menu-toggle" id="menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+                
                 <!-- Main Menu -->
-                <div class="menu text-right">
+                <div class="menu" id="main-menu">
                     <ul>
-                        <li><a class="hvr-underline-from-center" href="index.html">Home</a></li>
+                        <li><a class="hvr-underline-from-center active" href="index.html">Home</a></li>
                         <li><a class="hvr-underline-from-center" href="categories.html">Categories</a></li>
-                        <li><a class="hvr-underline-from-center" href="foods.html">Foods</a></li>
+                        <li><a class="hvr-underline-from-center" href="foods.html">Menu</a></li>
                         <li><a class="hvr-underline-from-center" href="order.html">Order</a></li>
                         <li><a class="hvr-underline-from-center" href="contact.html">Contact</a></li>
+                        <li><a class="hvr-underline-from-center" href="team.html">Team</a></li>
+                        <li><a class="hvr-underline-from-center" href="chatbot.html">Chat Bot</a></li>
+                        <li><a class="hvr-underline-from-center" href="account.html">My Account</a></li>
                         <li><a class="hvr-underline-from-center" href="login.html">Login</a></li>
                         <li>
-                            <a id="shopping-cart" class="shopping-cart">
-                                <i class="fa fa-cart-arrow-down"></i>
+                            <a id="shopping-cart" class="cart-icon">
+                                <i class="fas fa-shopping-cart"></i>
                                 <span class="badge">0</span>
                             </a>
-                            <div id="cart-content" class="cart-content">
-                                <h3 class="text-center">Shopping Cart</h3>
-                                <table class="cart-table" border="0">
-                                    <tr>
-                                        <th>Food</th>
-                                        <th>Name</th>
-                                        <th>Price</th>
-                                        <th>Qty</th>
-                                        <th>Total</th>
-                                        <th>Action</th>
-                                    </tr>
-                                    <!-- Cart items will be dynamically added here -->
+                            <div id="cart-content" class="cart-dropdown">
+                                <h3 class="text-center">Your Shopping Cart</h3>
+                                <table class="cart-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Item</th>
+                                            <th>Name</th>
+                                            <th>Price</th>
+                                            <th>Qty</th>
+                                            <th>Total</th>
+                                            <th>Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <!-- Cart items will be dynamically added here -->
+                                    </tbody>
                                 </table>
-                                <a href="order.html" class="btn-primary">Confirm Order</a>
+                                <div class="text-center">
+                                    <a href="order.html" class="btn btn-primary">Proceed to Checkout</a>
+                                </div>
                             </div>
                         </li>
                     </ul>
@@ -60,198 +83,187 @@
             </div>
         </nav>
     </header>
-    <!-- Navigation Section End -->
 
-    <!-- Food Search Section Start -->
-    <section class="food-search text-center" >
+    <!-- Hero Section -->
+    <section class="hero">
         <div class="container">
-            <form action="food-search.html">
-                <input type="search" placeholder="Search for food..." required>
-                <input type="submit" value="Search" class="btn-primary">
+            <h1>Delicious Food Delivered To Your Doorstep</h1>
+            <p class="text-white">Order from the best restaurants in town with just a few clicks</p>
+            
+            <form class="search-form" id="search-form">
+                <input type="search" class="search-input" id="search-input" placeholder="Search for food..." required>
+                <button type="submit" class="btn btn-primary search-btn">Search</button>
             </form>
         </div>
     </section>
-    <!-- Food Search Section End -->
 
-    <!-- Category Section Start -->
+    <!-- Categories Section -->
     <section class="categories">
         <div class="container">
-            <h2 class="text-center">Explore Foods</h2>
-            <div class="heading-border"></div>
-
-            <div class="grid-3">
-                <a href="category-foods.html">
-                    <div class="float-container">
-                        <img src="img/category/food.jpg" class="img-responsive" alt="">
-                        <h3 class="float-text text-white">Food</h3>
-                    </div>
+            <div class="heading">
+                <h2>Explore Foods</h2>
+            </div>
+            
+            <div class="grid grid-3">
+                <a href="category-foods.html?category=food" class="category-card">
+                    <img src="img/category/food.jpg" alt="Food Category" class="category-img">
+                    <h3 class="category-title text-white">Food</h3>
                 </a>
-                <a href="category-foods.html">
-                    <div class="float-container">
-                        <img src="img/category/soup.jpg" class="img-responsive" alt="">
-                        <h3 class="float-text text-white">Soup</h3>
-                    </div>
+                
+                <a href="category-foods.html?category=soup" class="category-card">
+                    <img src="img/category/soup.jpg" alt="Soup Category" class="category-img">
+                    <h3 class="category-title text-white">Soup</h3>
                 </a>
-                <a href="category-foods.html">
-                    <div class="float-container">
-                        <img src="img/category/drink.jpg" class="img-responsive" alt="">
-                        <h3 class="float-text text-white">Drink</h3>
-                    </div>
+                
+                <a href="category-foods.html?category=drink" class="category-card">
+                    <img src="img/category/drink.jpg" alt="Drink Category" class="category-img">
+                    <h3 class="category-title text-white">Drink</h3>
                 </a>
             </div>
         </div>
     </section>
-    <!-- Category Section End -->
 
-    <!-- Foods Section Start -->
+    <!-- Food Menu Section -->
     <section class="food-menu">
         <div class="container">
-            <h2 class="text-center">Food Menu</h2>
-            <div class="heading-border"></div>
-            <div class="grid-2">
-                <div class="food-menu-box">
-                    <form action="">
-                        <div class="food-menu-img">
-                            <img src="img/food/f1.jpg" alt="" class="img-responsive img-curve">
-                        </div>
-                        <div class="food-menu-desc">
-                            <h4>បាយស្រូប</h4>
-                            <p class="food-price">$1.25</p>
-                            <p class="food-details">បាយសាច់ជ្រូកពងទាចៀន</p>
-                            <input type="number" value="1" min="1">
-                            <input type="submit" class="btn-primary" value="Add To Cart">
-                        </div>
-                    </form>
+            <div class="heading">
+                <h2>Popular Menu Items</h2>
+            </div>
+            
+            <div class="grid grid-3">
+                <!-- Food Item 1 -->
+                <div class="food-card">
+                    <div class="food-img-container">
+                        <img src="img/food/f1.jpg" alt="បាយស្រូប" class="food-img">
+                    </div>
+                    <div class="food-body">
+                        <h3 class="food-title">បាយស្រូប</h3>
+                        <p class="food-price">$1.25</p>
+                        <p class="food-desc">បាយសាច់ជ្រូកពងទាចៀន</p>
+                        <form class="food-form">
+                            <input type="number" class="food-qty" value="1" min="1">
+                            <button type="submit" class="btn btn-primary btn-sm">Add to Cart</button>
+                        </form>
+                    </div>
                 </div>
-                <div class="food-menu-box">
-                    <form action="">
-                        <div class="food-menu-img">
-                            <img src="img/food/f2.jpg" alt="" class="img-responsive img-curve">
-                        </div>
-                        <div class="food-menu-desc">
-                            <h4>បាយម្រះព្រូវ</h4>
-                            <p class="food-price">$1.50</p>
-                            <p class="food-details">បាយឆារម្រះព្រូវ with ពងទាចៀន</p>
-                            <input type="number" value="1" min="1">
-                            <input type="submit" class="btn-primary" value="Add To Cart">
-                        </div>
-                    </form>
+                
+                <!-- Food Item 2 -->
+                <div class="food-card">
+                    <div class="food-img-container">
+                        <img src="img/food/f2.jpg" alt="បាយម្រះព្រូវ" class="food-img">
+                    </div>
+                    <div class="food-body">
+                        <h3 class="food-title">បាយម្រះព្រូវ</h3>
+                        <p class="food-price">$1.50</p>
+                        <p class="food-desc">បាយឆារម្រះព្រូវ with ពងទាចៀន</p>
+                        <form class="food-form">
+                            <input type="number" class="food-qty" value="1" min="1">
+                            <button type="submit" class="btn btn-primary btn-sm">Add to Cart</button>
+                        </form>
+                    </div>
                 </div>
-                <div class="food-menu-box">
-                    <form action="">
-                        <div class="food-menu-img">
-                            <img src="img/food/s1.jpg" alt="" class="img-responsive img-curve">
-                        </div>
-                        <div class="food-menu-desc">
-                            <h4>ហ្វឺ</h4>
-                            <p class="food-price">$2.50</p>
-                            <p class="food-details">ហ្វឺប្រហិតសាច់គោ</p>
-                            <input type="number" value="1" min="1">
-                            <input type="submit" class="btn-primary" value="Add To Cart">
-                        </div>
-                    </form>
-                </div>
-                <div class="food-menu-box">
-                    <form action="">
-                        <div class="food-menu-img">
-                            <img src="img/food/s2.jpg" alt="" class="img-responsive img-curve">
-                        </div>
-                        <div class="food-menu-desc">
-                            <h4>គុយទាវ</h4>
-                            <p class="food-price">$2.50</p>
-                            <p class="food-details">គុយទាវប្រហិតសាច់គោ</p>
-                            <input type="number" value="1" min="1">
-                            <input type="submit" class="btn-primary" value="Add To Cart">
-                        </div>
-                    </form>
-                </div>
-                <div class="food-menu-box">
-                    <form action="">
-                        <div class="food-menu-img">
-                            <img src="img/food/d1.jpg" alt="" class="img-responsive img-curve">
-                        </div>
-                        <div class="food-menu-desc">
-                            <h4>កាហ្វេ</h4>
-                            <p class="food-price">$1.00</p>
-                            <p class="food-details">កាហ្វេទឹកដោះគោទឹកកក(សាកថ្មបាន)</p>
-                            <input type="number" value="1" min="1">
-                            <input type="submit" class="btn-primary" value="Add To Cart">
-                        </div>
-                    </form>
-                </div>
-                <div class="food-menu-box">
-                    <form action="">
-                        <div class="food-menu-img">
-                            <img src="img/food/d2.jpg" alt="" class="img-responsive img-curve">
-                        </div>
-                        <div class="food-menu-desc">
-                            <h4>Milk Tea</h4>
-                            <p class="food-price">$2.00</p>
-                            <p class="food-details">តែចិន Olong Tea with sweat steam milk and Boba</p>
-                            <input type="number" value="1" min="1">
-                            <input type="submit" class="btn-primary" value="Add To Cart">
-                        </div>
-                    </form>
+                
+                <!-- Food Item 3 -->
+                <div class="food-card">
+                    <div class="food-img-container">
+                        <img src="img/food/s1.jpg" alt="ហ្វឺ" class="food-img">
+                    </div>
+                    <div class="food-body">
+                        <h3 class="food-title">ហ្វឺ</h3>
+                        <p class="food-price">$2.50</p>
+                        <p class="food-desc">ហ្វឺប្រហិតសាច់គោ</p>
+                        <form class="food-form">
+                            <input type="number" class="food-qty" value="1" min="1">
+                            <button type="submit" class="btn btn-primary btn-sm">Add to Cart</button>
+                        </form>
+                    </div>
                 </div>
             </div>
+            
+            <div class="text-center mt-40">
+                <a href="foods.html" class="btn btn-primary">View Full Menu</a>
+            </div>
         </div>
-        <p class="text-center">
-            <a href="foods.html" class="btn-primary">See All Foods</a>
-        </p>
     </section>
-    <!-- Foods Section End -->
 
-    <!-- Footer Section Start -->
-    <section class="footer">
+    <!-- Footer -->
+    <footer class="footer">
         <div class="container">
-            <div class="grid-3">
-                <div class="text-center">
-                    <h3>About Us</h3><br>
-                    <p>This is a frontend project about Food ordering system in which we are working with to improve customer service and improve sell of the resterant And to promote Khmer/Asian cuisine((✿◡‿◡))</p>
+            <div class="grid grid-3">
+                <div>
+                    <h3>About Us</h3>
+                    <p>Delicious Eats is a premium food delivery service bringing you the best culinary experiences from top restaurants right to your doorstep.</p>
                 </div>
-                <div class="texr-center">
-                    <h3>Site Map</h3><br>
-                    <div class="site-links">
-                        <a href="categories.html">Categories</a>
-                        <a href="foods.html">Foods</a>
+                
+                <div>
+                    <h3>Quick Links</h3>
+                    <div class="footer-links">
+                        <a href="index.html">Home</a>
+                        <a href="foods.html">Menu</a>
                         <a href="order.html">Order</a>
                         <a href="contact.html">Contact</a>
-                        <a href="login.html">Login</a>
                     </div>
                 </div>
-                <div class="social-links">
-                    <h3>Social Links</h3><br>
-                    <div class="social">
-                        <ul>
-                            <li><a href="https://youtube.com/@codearcade-se4rc?si=2vBakC9_9-q3AL0y"><img src="https://img.icons8.com/color/48/null/facebook-new.png"/></a></li>
-                            <li><a href="https://youtube.com/@codearcade-se4rc?si=2vBakC9_9-q3AL0y"><img src="https://img.icons8.com/fluency/48/null/instagram-new.png"/></a></li>
-                            <li><a href="https://youtube.com/@codearcade-se4rc?si=2vBakC9_9-q3AL0y"><img src="https://img.icons8.com/color/48/null/twitter--v1.png"/></a></li>
-                            <li><a href="https://youtube.com/@codearcade-se4rc?si=2vBakC9_9-q3AL0y"><img src="https://img.icons8.com/color/48/null/linkedin-circled--v1.png"/></a></li>
-                            <li><a href="https://youtube.com/@codearcade-se4rc?si=2vBakC9_9-q3AL0y"><img src="https://img.icons8.com/color/48/null/youtube-play.png"/></a></li>
-                        </ul>
+                
+                <div>
+                    <h3>Connect With Us</h3>
+                    <div class="social-links">
+                        <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.youtube.com/channel/UCrTEZy6WwgczJzw0BYCfu5Q" class="social-icon"><i class="fab fa-youtube"></i></a>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
-    <!-- Footer Section End -->
+    </footer>
 
-    <!-- Copyright Section start -->
+    <!-- Copyright -->
     <section class="copyright">
-        <div class="container text-center">
-            <p>All rights reserved. Design By <a href="#">Group 3 - I4AMS</a></p>
+        <div class="container">
+            <p>&copy; 2023 Delicious Eats. All rights reserved. Designed by <a href="#">Group 3 - I4AMS</a></p>
         </div>
-        <a id="back-to-top" class="btn-primary">
-            <i class="fa fa-angle-double-up"></i>
-        </a>
     </section>
-    <!-- Copyright Section End -->
 
-    <!-- JQuery -->
-    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
-    <!-- Jquery UI -->
-    <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
-    <!-- Custom JS -->
-    <script src="js/custom.js"></script>
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top" id="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <!-- JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="js/cart.js"></script> <!-- Add this first -->
+    <script src="js/addToCart.js"></script>
+    <script src="js/index.js"></script>
+    <script src="js/nav.js"></script>
+    <script src="js/sendDataToBackend.js"></script>
+    
+    <script>
+        // Mobile Menu Toggle
+        document.getElementById('menu-toggle').addEventListener('click', function() {
+            document.getElementById('main-menu').classList.toggle('active');
+        });
+
+        // Shopping Cart Toggle
+        document.getElementById('shopping-cart').addEventListener('click', function(e) {
+            e.preventDefault();
+            document.getElementById('cart-content').classList.toggle('show');
+        });
+
+        // Back to Top Button
+        window.addEventListener('scroll', function() {
+            var backToTop = document.getElementById('back-to-top');
+            if (window.pageYOffset > 300) {
+                backToTop.classList.add('show');
+            } else {
+                backToTop.classList.remove('show');
+            }
+        });
+
+        document.getElementById('back-to-top').addEventListener('click', function(e) {
+            e.preventDefault();
+            window.scrollTo({top: 0, behavior: 'smooth'});
+        });
+    </script>
 </body>
 </html>

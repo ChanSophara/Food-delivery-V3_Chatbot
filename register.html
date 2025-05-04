@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register | Delicious Eats</title>
+    <meta name="description" content="Create an account with Delicious Eats to enjoy our food delivery service">
+    
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Hover CSS -->
+    <link rel="stylesheet" href="css/hover-min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <header class="navbar">
+        <nav id="site-top-nav" class="navbar-menu navbar-fixed-top">
+            <div class="container nav-container">
+                <!-- Logo -->
+                <div class="logo">
+                    <a href="index.html" title="Delicious Eats">
+                        <img src="img/logo.jpg" alt="Delicious Eats Logo" class="img-responsive">
+                    </a>
+                </div>
+                
+                <!-- Mobile Menu Toggle -->
+                <button class="menu-toggle" id="menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+                
+                <!-- Main Menu -->
+                <div class="menu" id="main-menu">
+                    <ul>
+                        <li><a class="hvr-underline-from-center" href="about.html">About Shop</a></li>
+                        <li><a class="hvr-underline-from-center" href="register.html">Register</a></li>
+                        <li><a class="hvr-underline-from-center" href="login.html">Login</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Registration Section -->
+    <section class="register-section">
+        <div class="container">
+            <div class="grid grid-2">
+                <div class="register-image">
+                    <img src="img/food/f1.jpg" alt="Delicious Food" class="img-responsive rounded shadow">
+                    <div class="register-benefits">
+                        <h3>Why Register With Us?</h3>
+                        <ul>
+                            <li><i class="fas fa-check-circle"></i> Track your order history</li>
+                            <li><i class="fas fa-check-circle"></i> Faster checkout process</li>
+                            <li><i class="fas fa-check-circle"></i> Exclusive member discounts</li>
+                            <li><i class="fas fa-check-circle"></i> Personalized recommendations</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="register-form-container">
+                    <div class="heading">
+                        <h2>Create Your Account</h2>
+                        <p>Join Delicious Eats to enjoy our premium food delivery service</p>
+                    </div>
+                    
+                    <div id="register-confirmation" class="order-confirmation" style="display: none;">
+                        <i class="fas fa-check-circle fa-2x mb-20"></i>
+                        <h3>Registration Successful!</h3>
+                        <p>You can now login with your credentials.</p>
+                    </div>
+                    
+                    <form id="register-form" class="form">
+                        <fieldset>
+                            <div class="form-group">
+                                <label for="register-name" class="label">Full Name</label>
+                                <input type="text" id="register-name" class="form-control" placeholder="Enter your full name" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="register-email" class="label">Email Address</label>
+                                <input type="email" id="register-email" class="form-control" placeholder="Enter your email" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="register-phone" class="label">Phone Number</label>
+                                <input type="tel" id="register-phone" class="form-control" placeholder="Enter your phone number" required>
+                            </div>
+                            
+                            <div class="grid grid-2">
+                                <div class="form-group">
+                                    <label for="register-password" class="label">Password</label>
+                                    <input type="password" id="register-password" class="form-control" placeholder="At least 5 characters" required>
+                                    <small class="text-muted">Minimum 5 characters</small>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="register-confirm" class="label">Confirm Password</label>
+                                    <input type="password" id="register-confirm" class="form-control" placeholder="Confirm your password" required>
+                                </div>
+                            </div>
+                            
+                            <div class="grid grid-2">
+                                <div class="form-group">
+                                    <label for="register-dob" class="label">Date of Birth</label>
+                                    <input type="date" id="register-dob" class="form-control">
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="register-join" class="label">Join Date</label>
+                                    <input type="date" id="register-join" class="form-control" value="<?php echo date('Y-m-d'); ?>" readonly>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-primary btn-lg btn-block">Create Account</button>
+                            </div>
+                            
+                            <div class="text-center">
+                                <p>Already have an account? <a href="login.html">Login here</a></p>
+                            </div>
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+
+    <!-- Copyright -->
+    <section class="copyright">
+        <div class="container">
+            <p>&copy; 2023 Delicious Eats. All rights reserved. Designed by <a href="#">Group 3 - I4AMS</a></p>
+        </div>
+    </section>
+
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top" id="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <!-- JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="js/register.js"></script>
+    <script src="js/nav.js"></script>
+    
+    <script>
+        // Mobile Menu Toggle
+        document.getElementById('menu-toggle').addEventListener('click', function() {
+            document.getElementById('main-menu').classList.toggle('active');
+        });
+
+        // Back to Top Button
+        window.addEventListener('scroll', function() {
+            var backToTop = document.getElementById('back-to-top');
+            if (window.pageYOffset > 300) {
+                backToTop.classList.add('show');
+            } else {
+                backToTop.classList.remove('show');
+            }
+        });
+
+        document.getElementById('back-to-top').addEventListener('click', function(e) {
+            e.preventDefault();
+            window.scrollTo({top: 0, behavior: 'smooth'});
+        });
+
+        // Set today's date as default join date
+        document.getElementById('register-join').value = new Date().toISOString().substr(0, 10);
+    </script>
+</body>
+</html>

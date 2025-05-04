@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Account | Delicious Eats</title>
+    <meta name="description" content="Manage your Delicious Eats account and track your orders">
+    
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/account.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <header class="navbar">
+        <nav id="site-top-nav" class="navbar-menu navbar-fixed-top">
+            <div class="container nav-container">
+                <!-- Logo -->
+                <div class="logo">
+                    <a href="index.html" title="Delicious Eats">
+                        <img src="img/logo.jpg" alt="Delicious Eats Logo" class="img-responsive">
+                    </a>
+                </div>
+                
+                <!-- Mobile Menu Toggle -->
+                <button class="menu-toggle" id="menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+                
+                <!-- Main Menu -->
+                <div class="menu" id="main-menu">
+                    <ul>
+                        <li><a class="hvr-underline-from-center" href="index.html">Home</a></li>
+                        <li><a class="hvr-underline-from-center" href="categories.html">Categories</a></li>
+                        <li><a class="hvr-underline-from-center" href="foods.html">Menu</a></li>
+                        <li><a class="hvr-underline-from-center" href="order.html">Order</a></li>
+                        <li><a class="hvr-underline-from-center" href="contact.html">Contact</a></li>
+                        <li><a class="hvr-underline-from-center" href="team.html">Team</a></li>
+                        <li><a class="hvr-underline-from-center" href="chatbot.html">Chat Bot</a></li>
+                        <li><a class="hvr-underline-from-center active" href="account.html">My Account</a></li>
+                        <li><a class="hvr-underline-from-center" href="login.html">Login</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Account Dashboard -->
+    <section class="account-dashboard">
+        <div class="container">
+            <!-- Unauthorized Access Message -->
+            <div id="unauthorized-access" class="unauthorized-message" style="display: none;">
+                <div class="message-box animate__animated animate__fadeIn">
+                    <div class="message-icon">
+                        <i class="fas fa-exclamation-circle"></i>
+                    </div>
+                    <h2>Access Denied</h2>
+                    <p>You need to login to access your account dashboard.</p>
+                    <div class="action-buttons">
+                        <a href="login.html" class="btn btn-primary hvr-grow">Login</a>
+                        <a href="register.html" class="btn btn-outline hvr-grow">Register</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Authorized Content -->
+            <div id="authorized-content" style="display: none;">
+                <!-- Welcome Section -->
+                <div class="welcome-section animate__animated animate__fadeIn">
+                    <div class="welcome-message">
+                        <h1>Welcome back, <span id="user-greeting"></span>!</h1>
+                        <p class="member-since" id="member-since">Member since <span id="join-date"></span></p>
+                        <div class="account-badges">
+                            <span class="badge premium-badge hvr-pulse"><i class="fas fa-crown"></i> Premium Member</span>
+                            <span class="badge points-badge hvr-pulse"><i class="fas fa-coins"></i> <span id="loyalty-points">0</span> Points</span>
+                        </div>
+                    </div>
+                    <div class="user-avatar">
+                        <div class="avatar-circle hvr-buzz">
+                            <span id="avatar-initials"></span>
+                            <div class="online-status"></div>
+                        </div>
+                        <button id="edit-profile-btn" class="btn btn-outline hvr-grow">
+                            <i class="fas fa-edit"></i> Edit Profile
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Dashboard Grid -->
+                <div class="dashboard-grid">
+                    <!-- Account Summary Card -->
+                    <div class="dashboard-card account-summary animate__animated animate__fadeInLeft">
+                        <div class="card-header">
+                            <h3><i class="fas fa-user-circle"></i> Account Summary</h3>
+                            <button class="card-expand hvr-float"><i class="fas fa-expand"></i></button>
+                        </div>
+                        <div class="card-body">
+                            <div class="account-detail">
+                                <label><i class="fas fa-user-tag"></i> Full Name:</label>
+                                <p id="account-fullname"></p>
+                            </div>
+                            <div class="account-detail">
+                                <label><i class="fas fa-envelope"></i> Email:</label>
+                                <p id="account-email"></p>
+                            </div>
+                            <div class="account-detail">
+                                <label><i class="fas fa-phone"></i> Phone:</label>
+                                <p id="account-phone"></p>
+                            </div>
+                            <div class="account-detail">
+                                <label><i class="fas fa-birthday-cake"></i> Date of Birth:</label>
+                                <p id="account-dob"></p>
+                            </div>
+                            <div class="account-detail">
+                                <label><i class="fas fa-sign-in-alt"></i> Last Login:</label>
+                                <p id="account-lastlogin"></p>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <button class="btn btn-small hvr-sweep-to-right" id="change-password-btn">
+                                <i class="fas fa-key"></i> Change Password
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Order Stats Card -->
+                    <div class="dashboard-card order-stats animate__animated animate__fadeInRight">
+                        <div class="card-header">
+                            <h3><i class="fas fa-chart-pie"></i> Order Statistics</h3>
+                            <button class="card-expand hvr-float"><i class="fas fa-expand"></i></button>
+                        </div>
+                        <div class="card-body">
+                            <div class="stats-grid">
+                                <div class="stat-item total hvr-grow">
+                                    <div class="stat-icon">
+                                        <i class="fas fa-shopping-bag"></i>
+                                    </div>
+                                    <div class="stat-info">
+                                        <h4 id="total-orders">0</h4>
+                                        <p>Total Orders</p>
+                                    </div>
+                                </div>
+                                <div class="stat-item completed hvr-grow">
+                                    <div class="stat-icon">
+                                        <i class="fas fa-check-circle"></i>
+                                    </div>
+                                    <div class="stat-info">
+                                        <h4 id="completed-orders">0</h4>
+                                        <p>Completed</p>
+                                    </div>
+                                </div>
+                                <div class="stat-item pending hvr-grow">
+                                    <div class="stat-icon">
+                                        <i class="fas fa-clock"></i>
+                                    </div>
+                                    <div class="stat-info">
+                                        <h4 id="pending-orders">0</h4>
+                                        <p>Pending</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="stats-chart">
+                                <canvas id="orders-chart"></canvas>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Recent Orders Card -->
+                    <div class="dashboard-card recent-orders animate__animated animate__fadeInLeft">
+                        <div class="card-header">
+                            <h3><i class="fas fa-history"></i> Recent Orders</h3>
+                            <div class="header-actions">
+                                
+                                <button class="card-expand hvr-float"><i class="fas fa-expand"></i></button>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="orders-container">
+                                <div class="orders-list" id="recent-orders-list">
+                                    <!-- Orders will be populated here -->
+                                </div>
+                            </div>
+                            <div id="no-orders-message" class="no-orders">
+                                <i class="fas fa-shopping-basket"></i>
+                                <p>You haven't placed any orders yet.</p>
+                                <a href="index.html" class="btn btn-primary hvr-grow">Start Shopping</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Favorite Items Card -->
+                    <div class="dashboard-card favorites animate__animated animate__fadeInRight">
+                        <div class="card-header">
+                            <h3><i class="fas fa-heart"></i> Your Favorites</h3>
+                            <button class="card-expand hvr-float"><i class="fas fa-expand"></i></button>
+                        </div>
+                        <div class="card-body">
+                            <div id="favorite-items" class="favorite-items-grid">
+                                <!-- Favorite items will be populated here -->
+                            </div>
+                            <div id="no-favorites-message" class="no-favorites">
+                                <i class="fas fa-heart-broken"></i>
+                                <p>You don't have any favorite items yet.</p>
+                                <a href="foods.html" class="btn btn-outline hvr-grow">Browse Menu</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Edit Profile Modal -->
+                <div id="edit-profile-modal" class="modal">
+                    <div class="modal-content animate__animated animate__zoomIn">
+                        <div class="modal-header">
+                            <h3>Edit Profile</h3>
+                            <button class="close-modal hvr-grow">&times;</button>
+                        </div>
+                        <div class="modal-body">
+                            <form id="edit-profile-form">
+                                <div class="avatar-upload">
+                                    <div class="avatar-preview">
+                                        <div id="avatar-preview" class="avatar-circle">
+                                            <span id="avatar-preview-initials"></span>
+                                        </div>
+                                    </div>
+                                    <div class="avatar-edit">
+                                        <input type="file" id="avatar-upload" accept=".png, .jpg, .jpeg" />
+                                        <label for="avatar-upload" class="hvr-sweep-to-right">
+                                            <i class="fas fa-camera"></i> Change Photo
+                                        </label>
+                                    </div>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="edit-fullname">Full Name</label>
+                                    <div class="input-with-icon">
+                                        <i class="fas fa-user"></i>
+                                        <input type="text" id="edit-fullname" class="form-control" required>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="edit-phone">Phone Number</label>
+                                    <div class="input-with-icon">
+                                        <i class="fas fa-phone"></i>
+                                        <input type="tel" id="edit-phone" class="form-control" required>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="edit-dob">Date of Birth</label>
+                                    <div class="input-with-icon">
+                                        <i class="fas fa-calendar-alt"></i>
+                                        <input type="date" id="edit-dob" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="edit-address">Delivery Address</label>
+                                    <div class="input-with-icon">
+                                        <i class="fas fa-map-marker-alt"></i>
+                                        <textarea id="edit-address" class="form-control" rows="3"></textarea>
+                                    </div>
+                                </div>
+                                <div class="form-actions">
+                                    <button type="button" class="btn btn-outline close-modal hvr-sweep-to-left">Cancel</button>
+                                    <button type="submit" class="btn btn-primary hvr-sweep-to-right">Save Changes</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Change Password Modal -->
+                <div id="change-password-modal" class="modal">
+                    <div class="modal-content animate__animated animate__zoomIn">
+                        <div class="modal-header">
+                            <h3>Change Password</h3>
+                            <button class="close-modal hvr-grow">&times;</button>
+                        </div>
+                        <div class="modal-body">
+                            <form id="change-password-form">
+                                <div class="form-group">
+                                    <label for="current-password">Current Password</label>
+                                    <div class="input-with-icon">
+                                        <i class="fas fa-lock"></i>
+                                        <input type="password" id="current-password" class="form-control" required>
+                                        <button type="button" class="toggle-password hvr-grow"><i class="fas fa-eye"></i></button>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="new-password">New Password</label>
+                                    <div class="input-with-icon">
+                                        <i class="fas fa-key"></i>
+                                        <input type="password" id="new-password" class="form-control" required>
+                                        <button type="button" class="toggle-password hvr-grow"><i class="fas fa-eye"></i></button>
+                                    </div>
+                                    <small>Minimum 8 characters with at least one number and one letter</small>
+                                    <div class="password-strength">
+                                        <div class="strength-meter"></div>
+                                        <span class="strength-text">Weak</span>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="confirm-new-password">Confirm New Password</label>
+                                    <div class="input-with-icon">
+                                        <i class="fas fa-check-circle"></i>
+                                        <input type="password" id="confirm-new-password" class="form-control" required>
+                                        <button type="button" class="toggle-password hvr-grow"><i class="fas fa-eye"></i></button>
+                                    </div>
+                                </div>
+                                <div class="form-actions">
+                                    <button type="button" class="btn btn-outline close-modal hvr-sweep-to-left">Cancel</button>
+                                    <button type="submit" class="btn btn-primary hvr-sweep-to-right">Update Password</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="grid grid-3">
+                <div>
+                    <h3>About Us</h3>
+                    <p>Delicious Eats is a premium food delivery service bringing you the best culinary experiences from top restaurants right to your doorstep.</p>
+                </div>
+                
+                <div>
+                    <h3>Quick Links</h3>
+                    <div class="footer-links">
+                        <a href="index.html" class="hvr-underline-from-center">Home</a>
+                        <a href="foods.html" class="hvr-underline-from-center">Menu</a>
+                        <a href="order.html" class="hvr-underline-from-center">Order</a>
+                        <a href="contact.html" class="hvr-underline-from-center">Contact</a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3>Connect With Us</h3>
+                    <div class="social-links">
+                        <a href="#" class="social-icon hvr-grow"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-icon hvr-grow"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-icon hvr-grow"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.youtube.com/channel/UCrTEZy6WwgczJzw0BYCfu5Q" class="social-icon hvr-grow"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Copyright -->
+    <section class="copyright">
+        <div class="container">
+            <p>&copy; 2023 Delicious Eats. All rights reserved. Designed by <a href="#" class="hvr-underline-from-center">Group 3 - I4AMS</a></p>
+        </div>
+    </section>
+
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top hvr-bob" id="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <!-- JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="js/cart.js"></script>
+    <script src="js/addToCart.js"></script>
+    <script src="js/account.js"></script>
+    <script src="js/nav.js"></script>
+    
+    <script>
+        // Mobile Menu Toggle
+        document.getElementById('menu-toggle').addEventListener('click', function() {
+            document.getElementById('main-menu').classList.toggle('active');
+        });
+
+        
+    </script>
+</body>
+</html>

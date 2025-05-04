@@ -4,55 +4,79 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Online Food Delivery Website</title>
+    <title>Category Foods | Delicious Eats</title>
+    <meta name="description" content="Browse foods by category on Delicious Eats">
+    
     <!-- Favicon -->
     <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
-    <!-- Fontawesome CSS -->
-    <link rel="stylesheet" href="css/font-awesome/css/font-awesome.css">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
     <!-- Hover CSS -->
     <link rel="stylesheet" href="css/hover-min.css">
+    
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <!-- Navigation Section Start -->
+    <!-- Navigation -->
     <header class="navbar">
         <nav id="site-top-nav" class="navbar-menu navbar-fixed-top">
-            <div class="container">
-                <!-- logo -->
+            <div class="container nav-container">
+                <!-- Logo -->
                 <div class="logo">
-                    <a href="index.html" title="Logo">
-                        <img src="img/logo.png" alt="Logo" class="img-responsive">
+                    <a href="index.html" title="Delicious Eats">
+                        <img src="img/logo.jpg" alt="Delicious Eats Logo" class="img-responsive">
                     </a>
                 </div>
+                
+                <!-- Mobile Menu Toggle -->
+                <button class="menu-toggle" id="menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+                
                 <!-- Main Menu -->
-                <div class="menu text-right">
+                <div class="menu" id="main-menu">
                     <ul>
                         <li><a class="hvr-underline-from-center" href="index.html">Home</a></li>
                         <li><a class="hvr-underline-from-center" href="categories.html">Categories</a></li>
-                        <li><a class="hvr-underline-from-center" href="foods.html">Foods</a></li>
+                        <li><a class="hvr-underline-from-center" href="foods.html">Menu</a></li>
                         <li><a class="hvr-underline-from-center" href="order.html">Order</a></li>
                         <li><a class="hvr-underline-from-center" href="contact.html">Contact</a></li>
                         <li><a class="hvr-underline-from-center" href="login.html">Login</a></li>
+                        <li><a class="hvr-underline-from-center" href="team.html">Team</a></li>
+                        <li><a class="hvr-underline-from-center" href="chatbot.html">Chat Bot</a></li>
+                        <li><a class="hvr-underline-from-center" href="account.html">My Account</a></li>
+                        <li><a class="hvr-underline-from-center" href="login.html">Login</a></li>
                         <li>
-                            <a id="shopping-cart" class="shopping-cart">
-                                <i class="fa fa-cart-arrow-down"></i>
+                            <a id="shopping-cart" class="cart-icon">
+                                <i class="fas fa-shopping-cart"></i>
                                 <span class="badge">0</span>
                             </a>
-                            <div id="cart-content" class="cart-content">
-                                <h3 class="text-center">Shopping Cart</h3>
-                                <table class="cart-table" border="0">
-                                    <tr>
-                                        <th>Food</th>
-                                        <th>Name</th>
-                                        <th>Price</th>
-                                        <th>Qty</th>
-                                        <th>Total</th>
-                                        <th>Action</th>
-                                    </tr>
-                                    <!-- Cart items will be dynamically added here -->
+                            <div id="cart-content" class="cart-dropdown">
+                                <h3 class="text-center">Your Shopping Cart</h3>
+                                <table class="cart-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Item</th>
+                                            <th>Name</th>
+                                            <th>Price</th>
+                                            <th>Qty</th>
+                                            <th>Total</th>
+                                            <th>Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <!-- Cart items will be dynamically added here -->
+                                    </tbody>
                                 </table>
-                                <a href="order.html" class="btn-primary">Confirm Order</a>
+                                <div class="text-center">
+                                    <a href="order.html" class="btn btn-primary">Proceed to Checkout</a>
+                                </div>
                             </div>
                         </li>
                     </ul>
@@ -60,162 +84,197 @@
             </div>
         </nav>
     </header>
-    <!-- Navigation Section End -->
 
-    <!-- Food Search Section Start -->
-    <section class="food-search text-center">
-        <div class="container">
-            <h2 style="background: #44bd32;">Items on your <a href="#" class="text-white">Search</a></h2>
-        </div>
-    </section>
-    <!-- Food Search Section End -->
-
-    <!-- Foods Section Start -->
+    <!-- Category Foods Section -->
     <section class="food-menu">
         <div class="container">
-            <h2 class="text-center">Food Menu</h2>
-            <div class="heading-border"></div>
-            <div class="grid-2">
-                <div class="food-menu-box">
-                    <form action="">
-                        <div class="food-menu-img">
-                            <img src="img/food/f1.jpg" alt="" class="img-responsive img-curve">
-                        </div>
-                        <div class="food-menu-desc">
-                            <h4>បាយស្រូប</h4>
-                            <p class="food-price">$1.25</p>
-                            <p class="food-details">បាយសាច់ជ្រូកពងទាចៀន</p>
-                            <input type="number" value="1" min="1">
-                            <input type="submit" class="btn-primary" value="Add To Cart">
-                        </div>
-                    </form>
+            <div class="heading">
+                <h2 id="category-title">Category Foods</h2>
+                <p id="category-description">Browse our selection of delicious foods in this category</p>
+            </div>
+            
+            <div class="grid grid-3" id="category-foods-container">
+                <!-- Foods will be dynamically loaded here -->
+                <div class="food-card">
+                    <div class="food-img-container">
+                        <img src="img/food/f1.jpg" alt="Food Item" class="food-img">
+                    </div>
+                    <div class="food-body">
+                        <h3 class="food-title">Food Name</h3>
+                        <p class="food-price">$0.00</p>
+                        <p class="food-desc">Food description goes here</p>
+                        <form class="food-form">
+                            <input type="number" class="food-qty" value="1" min="1">
+                            <button type="submit" class="btn btn-primary btn-sm">Add to Cart</button>
+                        </form>
+                    </div>
                 </div>
-                <div class="food-menu-box">
-                    <form action="">
-                        <div class="food-menu-img">
-                            <img src="img/food/f2.jpg" alt="" class="img-responsive img-curve">
-                        </div>
-                        <div class="food-menu-desc">
-                            <h4>បាយម្រះព្រូវ</h4>
-                            <p class="food-price">$1.50</p>
-                            <p class="food-details">បាយឆារម្រះព្រូវ with ពងទាចៀន</p>
-                            <input type="number" value="1" min="1">
-                            <input type="submit" class="btn-primary" value="Add To Cart">
-                        </div>
-                    </form>
-                </div>
-                <div class="food-menu-box">
-                    <form action="">
-                        <div class="food-menu-img">
-                            <img src="img/food/s1.jpg" alt="" class="img-responsive img-curve">
-                        </div>
-                        <div class="food-menu-desc">
-                            <h4>ហ្វឺ</h4>
-                            <p class="food-price">$2.50</p>
-                            <p class="food-details">ហ្វឺប្រហិតសាច់គោ</p>
-                            <input type="number" value="1" min="1">
-                            <input type="submit" class="btn-primary" value="Add To Cart">
-                        </div>
-                    </form>
-                </div>
-                <div class="food-menu-box">
-                    <form action="">
-                        <div class="food-menu-img">
-                            <img src="img/food/s2.jpg" alt="" class="img-responsive img-curve">
-                        </div>
-                        <div class="food-menu-desc">
-                            <h4>គុយទាវ</h4>
-                            <p class="food-price">$2.50</p>
-                            <p class="food-details">គុយទាវប្រហិតសាច់គោ</p>
-                            <input type="number" value="1" min="1">
-                            <input type="submit" class="btn-primary" value="Add To Cart">
-                        </div>
-                    </form>
-                </div>
-                <div class="food-menu-box">
-                    <form action="">
-                        <div class="food-menu-img">
-                            <img src="img/food/d1.jpg" alt="" class="img-responsive img-curve">
-                        </div>
-                        <div class="food-menu-desc">
-                            <h4>កាហ្វេ</h4>
-                            <p class="food-price">$1.00</p>
-                            <p class="food-details">កាហ្វេទឹកដោះគោទឹកកក(សាកថ្មបាន)</p>
-                            <input type="number" value="1" min="1">
-                            <input type="submit" class="btn-primary" value="Add To Cart">
-                        </div>
-                    </form>
-                </div>
-                <div class="food-menu-box">
-                    <form action="">
-                        <div class="food-menu-img">
-                            <img src="img/food/d2.jpg" alt="" class="img-responsive img-curve">
-                        </div>
-                        <div class="food-menu-desc">
-                            <h4>Milk Tea</h4>
-                            <p class="food-price">$2.00</p>
-                            <p class="food-details">តែចិន Olong Tea with sweat steam milk and Boba</p>
-                            <input type="number" value="1" min="1">
-                            <input type="submit" class="btn-primary" value="Add To Cart">
-                        </div>
-                    </form>
-                </div>
+            </div>
+            
+            <div class="text-center mt-40">
+                <a href="categories.html" class="btn btn-outline">Back to Categories</a>
             </div>
         </div>
     </section>
-    <!-- Foods Section End -->
 
-    <!-- Footer Section Start -->
-    <section class="footer">
+    <!-- Footer -->
+    <footer class="footer">
         <div class="container">
-            <div class="grid-3">
-                <div class="text-center">
-                    <h3>About Us</h3><br>
-                    <p>This is a frontend project about Food ordering system in which we are working with to improve customer service and improve sell of the resterant And to promote Khmer/Asian cuisine((✿◡‿◡))</p>
+            <div class="grid grid-3">
+                <div>
+                    <h3>About Us</h3>
+                    <p>Delicious Eats is a premium food delivery service bringing you the best culinary experiences from top restaurants right to your doorstep.</p>
                 </div>
-                <div class="texr-center">
-                    <h3>Site Map</h3><br>
-                    <div class="site-links">
-                        <a href="categories.html">Categories</a>
-                        <a href="foods.html">Foods</a>
+                
+                <div>
+                    <h3>Quick Links</h3>
+                    <div class="footer-links">
+                        <a href="index.html">Home</a>
+                        <a href="foods.html">Menu</a>
                         <a href="order.html">Order</a>
                         <a href="contact.html">Contact</a>
-                        <a href="login.html">Login</a>
                     </div>
                 </div>
-                <div class="social-links">
-                    <h3>Social Links</h3><br>
-                    <div class="social">
-                        <ul>
-                            <li><a href="#"><img src="https://img.icons8.com/color/48/null/facebook-new.png"/></a></li>
-                            <li><a href="#"><img src="https://img.icons8.com/fluency/48/null/instagram-new.png"/></a></li>
-                            <li><a href="#"><img src="https://img.icons8.com/color/48/null/twitter--v1.png"/></a></li>
-                            <li><a href="#"><img src="https://img.icons8.com/color/48/null/linkedin-circled--v1.png"/></a></li>
-                            <li><a href="#"><img src="https://img.icons8.com/color/48/null/youtube-play.png"/></a></li>
-                        </ul>
+                
+                <div>
+                    <h3>Connect With Us</h3>
+                    <div class="social-links">
+                        <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.youtube.com/channel/UCrTEZy6WwgczJzw0BYCfu5Q" class="social-icon"><i class="fab fa-youtube"></i></a>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
-    <!-- Footer Section End -->
+    </footer>
 
-    <!-- Copyright Section start -->
+    <!-- Copyright -->
     <section class="copyright">
-        <div class="container text-center">
-            <p>All rights reserved. Design By <a href="#">Group 3 - I4AMS</a></p>
+        <div class="container">
+            <p>&copy; 2023 Delicious Eats. All rights reserved. Designed by <a href="#">Group 3 - I4AMS</a></p>
         </div>
-        <a id="back-to-top" class="btn-primary">
-            <i class="fa fa-angle-double-up"></i>
-        </a>
     </section>
-    <!-- Copyright Section End -->
 
-    <!-- JQuery -->
-    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
-    <!-- Jquery UI -->
-    <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
-    <!-- Custom JS -->
-    <script src="js/custom.js"></script>
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top" id="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <!-- JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="js/cart.js"></script> <!-- Add this first -->
+    <script src="js/addToCart.js"></script>
+    <script src="js/category-foods.js"></script>
+    <script src="js/nav.js"></script>
+    <script src="js/sendDataToBackend.js"></script>
+    <script>
+        // Mobile Menu Toggle
+        document.getElementById('menu-toggle').addEventListener('click', function() {
+            document.getElementById('main-menu').classList.toggle('active');
+        });
+
+        // Shopping Cart Toggle
+        document.getElementById('shopping-cart').addEventListener('click', function(e) {
+            e.preventDefault();
+            document.getElementById('cart-content').classList.toggle('show');
+        });
+
+        // Back to Top Button
+        window.addEventListener('scroll', function() {
+            var backToTop = document.getElementById('back-to-top');
+            if (window.pageYOffset > 300) {
+                backToTop.classList.add('show');
+            } else {
+                backToTop.classList.remove('show');
+            }
+        });
+
+        document.getElementById('back-to-top').addEventListener('click', function(e) {
+            e.preventDefault();
+            window.scrollTo({top: 0, behavior: 'smooth'});
+        });
+
+        // Get category from URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const category = urlParams.get('category');
+        
+        // Update page title and description based on category
+        if (category) {
+            const categoryTitle = document.getElementById('category-title');
+            const categoryDesc = document.getElementById('category-description');
+            
+            switch(category) {
+                case 'food':
+                    categoryTitle.textContent = 'Main Dishes';
+                    categoryDesc.textContent = 'Explore our delicious main dishes';
+                    break;
+                case 'soup':
+                    categoryTitle.textContent = 'Soups';
+                    categoryDesc.textContent = 'Warm up with our tasty soups';
+                    break;
+                case 'drink':
+                    categoryTitle.textContent = 'Drinks';
+                    categoryDesc.textContent = 'Refresh yourself with our drinks';
+                    break;
+                default:
+                    categoryTitle.textContent = 'All Foods';
+                    categoryDesc.textContent = 'Browse our full menu';
+            }
+            
+            // Here you would typically load foods for this category from your backend
+            // For now, we'll just simulate it
+            loadCategoryFoods(category);
+        }
+        
+        function loadCategoryFoods(category) {
+            // This would be replaced with an actual API call to your backend
+            const container = document.getElementById('category-foods-container');
+            container.innerHTML = ''; // Clear placeholder
+            
+            // Sample data - replace with your actual data
+            const foods = {
+                'food': [
+                    {id: 1, name: 'បាយស្រូប', price: 1.25, desc: 'បាយសាច់ជ្រូកពងទាចៀន', image: 'img/food/f1.jpg'},
+                    {id: 2, name: 'បាយម្រះព្រូវ', price: 1.50, desc: 'បាយឆារម្រះព្រូវ with ពងទាចៀន', image: 'img/food/f2.jpg'}
+                ],
+                'soup': [
+                    {id: 3, name: 'ហ្វឺ', price: 2.50, desc: 'ហ្វឺប្រហិតសាច់គោ', image: 'img/food/s1.jpg'},
+                    {id: 4, name: 'គុយទាវ', price: 2.50, desc: 'គុយទាវប្រហិតសាច់គោ', image: 'img/food/s2.jpg'}
+                ],
+                'drink': [
+                    {id: 5, name: 'កាហ្វេ', price: 1.00, desc: 'កាហ្វេទឹកដោះគោទឹកកក(សាកថ្មបាន)', image: 'img/food/d1.jpg'},
+                    {id: 6, name: 'Milk Tea', price: 2.00, desc: 'តែចិន Olong Tea with sweat steam milk and Boba', image: 'img/food/d2.jpg'}
+                ]
+            };
+            
+            const categoryFoods = foods[category] || [];
+            
+            if (categoryFoods.length === 0) {
+                container.innerHTML = '<p class="text-center">No foods found in this category.</p>';
+                return;
+            }
+            
+            categoryFoods.forEach(food => {
+                const foodCard = document.createElement('div');
+                foodCard.className = 'food-card';
+                foodCard.innerHTML = `
+                    <div class="food-img-container">
+                        <img src="${food.image}" alt="${food.name}" class="food-img">
+                    </div>
+                    <div class="food-body">
+                        <h3 class="food-title">${food.name}</h3>
+                        <p class="food-price">$${food.price.toFixed(2)}</p>
+                        <p class="food-desc">${food.desc}</p>
+                        <form class="food-form">
+                            <input type="number" class="food-qty" value="1" min="1">
+                            <button type="submit" class="btn btn-primary btn-sm">Add to Cart</button>
+                        </form>
+                    </div>
+                `;
+                container.appendChild(foodCard);
+            });
+        }
+    </script>
 </body>
 </html>

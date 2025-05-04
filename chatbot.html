@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot | Delicious Eats</title>
+    <meta name="description" content="Get instant help from our food delivery chatbot">
+    
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Kantumruy+Pro:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Hover CSS -->
+    <link rel="stylesheet" href="css/hover-min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/chatbot.css">
+</head>
+<body>
+    <!-- Navigation (same as before) -->
+    <!-- Navigation -->
+    <header class="navbar">
+        <nav id="site-top-nav" class="navbar-menu navbar-fixed-top">
+            <div class="container nav-container">
+                <!-- Logo -->
+                <div class="logo">
+                    <a href="index.html" title="Delicious Eats">
+                        <img src="img/logo.jpg" alt="Delicious Eats Logo" class="img-responsive">
+                    </a>
+                </div>
+                
+                <!-- Mobile Menu Toggle -->
+                <button class="menu-toggle" id="menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+                
+                <!-- Main Menu -->
+                <div class="menu" id="main-menu">
+                    <ul>
+                        <li><a class="hvr-underline-from-center" href="index.html">Home</a></li>
+                        <li><a class="hvr-underline-from-center" href="categories.html">Categories</a></li>
+                        <li><a class="hvr-underline-from-center" href="foods.html">Menu</a></li>
+                        <li><a class="hvr-underline-from-center" href="order.html">Order</a></li>
+                        <li><a class="hvr-underline-from-center" href="contact.html">Contact</a></li>
+                        <li><a class="hvr-underline-from-center" href="team.html">Team</a></li>
+                        <li><a class="hvr-underline-from-center" href="chatbot.html">Chat Bot</a></li>
+                        <li><a class="hvr-underline-from-center" href="account.html">My Account</a></li>
+                        <li><a class="hvr-underline-from-center" href="login.html">Login</a></li>
+                        <li>
+                            <a id="shopping-cart" class="cart-icon">
+                                <i class="fas fa-shopping-cart"></i>
+                                <span class="badge">0</span>
+                            </a>
+                            <div id="cart-content" class="cart-dropdown">
+                                <h3 class="text-center">Your Shopping Cart</h3>
+                                <table class="cart-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Item</th>
+                                            <th>Name</th>
+                                            <th>Price</th>
+                                            <th>Qty</th>
+                                            <th>Total</th>
+                                            <th>Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <!-- Cart items will be dynamically added here -->
+                                    </tbody>
+                                </table>
+                                <div class="text-center">
+                                    <a href="order.html" class="btn btn-primary">Proceed to Checkout</a>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <!-- Chatbot Section -->
+    <section class="chatbot-section">
+        <div class="container">
+            <div class="heading">
+                <h2 id="chatbot-title">Delicious Eats Assistant</h2>
+                <p id="chatbot-subtitle">How can I help you today?</p>
+            </div>
+            
+            <div class="chatbot-container">
+                <div class="chatbot-header">
+                    <div class="chatbot-avatar">
+                        <img src="img/chatbot-avatar.jpg" alt="Chatbot Avatar">
+                        <div class="typing-indicator" id="typing-indicator">
+                            <div class="dot"></div>
+                            <div class="dot"></div>
+                            <div class="dot"></div>
+                        </div>
+                    </div>
+                    <div class="chatbot-info">
+                        <h3 id="chatbot-name">Delicious Eats Bot</h3>
+                        <div class="chatbot-status">
+                            <span class="status-dot"></span>
+                            <span id="status-text">Online</span>
+                        </div>
+                    </div>
+                    <div class="chatbot-actions">
+                        <button class="action-btn" id="clear-chat" title="Clear conversation">
+                            <i class="fas fa-trash-alt"></i>
+                        </button>
+                        <div class="language-switcher">
+                            <button class="language-btn active" data-lang="en">EN</button>
+                            <button class="language-btn" data-lang="km">ខ្មែរ</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="chatbot-messages" id="chat-messages">
+                    <!-- Messages will appear here -->
+                    <div class="message bot-message welcome-message">
+                        <div class="message-content">
+                            <p id="welcome-message">👋 Hello! I'm your Delicious Eats assistant. How can I help you today?</p>
+                            <div class="quick-reactions">
+                                <button class="quick-reaction" data-message="What's on the menu today?">🍔 Menu</button>
+                                <button class="quick-reaction" data-message="How do I place an order?">📦 Order Help</button>
+                                <button class="quick-reaction" data-message="Location of the shop">📍 Location</button>
+                            </div>
+                        </div>
+                        <div class="message-time">Just now</div>
+                    </div>
+                </div>
+                
+                <div class="quick-suggestions-container">
+                    <div class="quick-suggestions-header">
+                        <h4 id="suggestions-title">💡 Quick Suggestions:</h4>
+                        <button id="suggestions-toggle"><i class="fas fa-chevron-up"></i></button>
+                    </div>
+                    <div class="quick-suggestions" id="quick-suggestions">
+                        <!-- Quick suggestions will be added here by JavaScript -->
+                    </div>
+                </div>
+                
+                <div class="chatbot-input-container">
+                    <div class="input-actions">
+                        <button class="input-action-btn" id="emoji-btn">
+                            <i class="far fa-smile"></i>
+                        </button>
+                        <button class="input-action-btn" id="attach-btn">
+                            <i class="fas fa-paperclip"></i>
+                        </button>
+                    </div>
+                    <div class="chatbot-input">
+                        <input type="text" id="user-input" placeholder="Type your message here..." autocomplete="off">
+                        <button id="send-button"><i class="fas fa-paper-plane"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Emoji Picker Container (hidden by default) -->
+    <div class="emoji-picker-container" id="emoji-picker">
+        <div class="emoji-picker-header">
+            <span>Select Emoji</span>
+            <button class="emoji-picker-close">&times;</button>
+        </div>
+        <div class="emoji-categories">
+            <button class="emoji-category active" data-category="people">😃 People</button>
+            <button class="emoji-category" data-category="food">🍔 Food</button>
+            <button class="emoji-category" data-category="nature">🌿 Nature</button>
+            <button class="emoji-category" data-category="objects">💡 Objects</button>
+            <button class="emoji-category" data-category="symbols">❤️ Symbols</button>
+        </div>
+        <div class="emoji-grid" id="emoji-grid">
+            <!-- Emojis will be loaded here -->
+        </div>
+    </div>
+
+    <!-- Footer (same as before) -->
+    <footer class="footer">
+        <div class="container">
+            <div class="grid grid-3">
+                <div>
+                    <h3>About Us</h3>
+                    <p>Delicious Eats is a premium food delivery service bringing you the best culinary experiences from top restaurants right to your doorstep.</p>
+                </div>
+                
+                <div>
+                    <h3>Quick Links</h3>
+                    <div class="footer-links">
+                        <a href="index.html">Home</a>
+                        <a href="foods.html">Menu</a>
+                        <a href="order.html">Order</a>
+                        <a href="contact.html">Contact</a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3>Connect With Us</h3>
+                    <div class="social-links">
+                        <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.youtube.com/channel/UCrTEZy6WwgczJzw0BYCfu5Q" class="social-icon"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="js/addToCart.js"></script>
+    <script src="js/cart.js"></script>
+    <script src="js/chatbot.js"></script>
+    <script src="js/nav.js"></script>
+    <script src="js/sendDataToBackend.js"></script>
+    
+    <script>
+        // Mobile Menu Toggle (same as before)
+            // Mobile Menu Toggle
+            document.getElementById('menu-toggle').addEventListener('click', function() {
+                document.getElementById('main-menu').classList.toggle('active');
+            });
+    
+            // Shopping Cart Toggle
+            document.getElementById('shopping-cart').addEventListener('click', function(e) {
+                e.preventDefault();
+                document.getElementById('cart-content').classList.toggle('show');
+            });
+    
+            // Back to Top Button
+            window.addEventListener('scroll', function() {
+                var backToTop = document.getElementById('back-to-top');
+                if (window.pageYOffset > 300) {
+                    backToTop.classList.add('show');
+                } else {
+                    backToTop.classList.remove('show');
+                }
+            });
+    
+            document.getElementById('back-to-top').addEventListener('click', function(e) {
+                e.preventDefault();
+                window.scrollTo({top: 0, behavior: 'smooth'});
+            });
+    </script>
+
+
+    <!-- Copyright -->
+    <section class="copyright">
+        <div class="container">
+            <p>&copy; 2023 Delicious Eats. All rights reserved. Designed by <a href="#">Group 3 - I4AMS</a></p>
+        </div>
+    </section>
+
+    
+</body>
+</html>
